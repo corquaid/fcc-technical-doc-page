@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+
+  <style>
+      @media only screen and (max-width: 815px) {
+    /* For mobile phones: */
+    #navbar ul {
+      border: 1px solid;
+      height: 207px;
+    }
+  }
+  </style>
+
+  <body>
+
+    <div>
+      <nav id="navbar">
+        <header>List of Methods</header>
+
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Array.prototype.filter()">Array.prototype.filter()</a>
+        <a class="nav-link" href="#Array.prototype.forEach()">Array.prototype.forEach()</a>
+        <a class="nav-link" href="#Array.prototype.map()">Array.prototype.map()</a>
+        <a class="nav-link" href="#Array.prototype.every()">Array.prototype.every()</a>
+        <a class="nav-link" href="#Array.prototype.some()">Array.prototype.some()</a>
+      </nav>
+    </div>
+
+    <div id="main-title">
+      <h1>My Top 5 JavaScript Array Methods</h1>
+    </div>
+
+    <div>
+      <main id="main-doc">
+        <section class="main-section" id="Introduction">
+          <header>
+            <h2>Introduction</h2><br>
+          </header>
+          <p>Arrays are one of the main types of data storage within the JavaScript programming language. They can be manipulated in countless ways using various methods.</p><br>
+          <p>The following are some of my favourite methods for data manipulation within JavaScript arrays that I use all the time.</p><br>
+          <li>Array.prototype.<strong>filter()</strong></li>
+          <li>Array.prototype.<strong>forEach()</strong></li>
+          <li>Array.prototype.<strong>map()</strong></li>
+          <li>Array.prototype.<strong>every()</strong></li>
+          <li>Array.prototype.<strong>some()</strong></li><br>
+          <p>Let's explore each of these cool methods in some more detail.</p><br>
+        </section>
+
+        <section class="main-section" id="Array.prototype.filter()">
+          <header>
+            <h2>Array.prototype.filter()</h2>
+          </header>
+          <p>The <code><strong>filter()</strong></code> method <strong>creates a new array</strong> with all the elements that pass the test implemented by the provided function.</p><br>
+          <p>An example of the syntax of this method would be:</p><br>
+          <p><code>
+              <div id="code-box">
+                <span id="blue">const</span>
+                <span>fruits = [</span>
+                <span id="green">'apple', 'banana', 'grapes', 'mango', 'orange'</span>
+                <span>]</span><br><br>
+                <span id="grey">/**</span><br>
+                <span id="grey">* Filter array items based on search criteria (query)</span><br>
+                <span id="grey">*/</span><br><br>
+                <span id="blue">const</span>
+                <span id="red">filterItems</span>
+                <span>= (arr, query) => {</span><br>
+                <span id="blue">return</span>
+                <span>arr.</span><span id="red">filter</span>
+                <span>(el => el.</span><span id="red">toLowerCase</span><span>().</span><span id="red">indexOf</span><span>(query.</span><span id="red">toLowerCase</span><span>()) !== -1)</span><br>
+                <span>}</span><br><br>
+                <span>console.</span><span id="red">log(filterItems</span><span>(fruits,</span>
+                <span id="green">'ap'</span><span>))</span>
+                <span id="grey">// ['apple', 'grapes']</span><br><br>
+                <span>console.</span><span id="red">log(filterItems</span><span>(fruits,</span>
+                <span id="green">'an'</span><span>))</span>
+                <span id="grey">// ['banana', 'mango', 'orange']</span>
+              </div>
+            </code>
+            </p>
+        </section>
+
+        <section class="main-section" id="Array.prototype.forEach()">
+          <header>
+            <h2>Array.prototype.forEach()</h2>
+          </header>
+          <p>The <code><strong>forEach()</strong></code> method executes a provided function once for each array element in ascending order. It is not invoked for index properties that have been deleted or uninitialised.</p><br>
+          <p>An example of the syntax of this method would be:</p><br>
+          <p><code>
+              <div id="code-box">
+                <span id="blue">let</span>
+                <span>fruits = [</span>
+                <span id="green">'one', 'two', 'three', 'four'</span>
+                <span>]</span><br><br>
+                <span>words.</span><span id="red">forEach</span><span>((word) => {</span><br>
+                <span>console.</span><span id="red">log</span><span>(word)</span><br>
+                <span id="blue">if</span>
+                <span>(word ===</span>
+                <span id="green">'two'</span>
+                <span>) {</span><br>
+                <span>words.</span><span id="red">shift</span><span>()</span>
+                <span id="grey">//'one' will delete from array</span><br>
+                <span>}</span><br>
+                <span>})</span>
+                <span id="grey">// one // two // four</span><br><br>
+                <span>console.</span><span id="red">log</span><span>(words);</span>
+                <span id="grey">//['two', 'three', 'four']</span>
+              </div>
+            </code>
+            </p>
+        </section>
+
+        <section class="main-section" id="Array.prototype.map()">
+          <header>
+            <h2>Array.prototype.map()</h2>
+          </header>
+          <p>The <code><strong>map()</strong></code> method <strong>creates a new array</strong> populated with the results of calling a provided function on every element in the calling array.</p><br>
+          <p><code>map</code> calls a provided <code><em>callback</em></code> function <strong>once for each element</strong> in an array, in order, and constructs a new array from the results.</p>
+          <p><code><em>callback</em></code> is invoked only for indexes of the array which have assigned values (including <code style="color: steelblue">undefined</code>).</p>
+        </section>
+
+        <section class="main-section" id="Array.prototype.every()">
+          <header>
+            <h2>Array.prototype.every()</h2>
+          </header>
+          <p>The <code><strong>every()</strong></code> method tests whether all elements in the array pass the test implemented by the provide function. It returns a Boolean value, i.e. true or false.</p><br>
+          <p>The <code>every</code> method executes the provided <code><em>callback</em></code> function once for each element present in the array until it finds the once where <code><em>callback</em></code> returns a falsy value. If such an element is found, the <code>every</code> method immediately returns <code><strong>false</strong></code>. Otherwise, if <code><em>callback</em></code> returns a truthy value for all elements, <code>every</code> returns <code><strong>true</strong></code>.</p>
+        </section>
+
+        <section class="main-section" id="Array.prototype.some()">
+          <header>
+            <h2>Array.prototype.some()</h2>
+          </header>
+          <p>The <code><strong>some()</strong></code> method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.</p><br>
+          <p>The <code>some()</code> method executes the <code><em>callback</em></code> function once for each element present in the array until it finds one where <code><em>callback</em></code> returns a <em>truthy</em> value (a value that becomes true when converted to a Boolean). If such an element is found, <code>some()</code> immediatelyreturns <code><strong>true</strong></code>. Otherwise, <code>some()</code> returns <code><strong>false</strong></code>.</p> <code><em>callback</em></code> is invoked only for indexes of the array with assigned values. It is not invoked for indexes which have been deleted or which have never been assigned values.
+        </section><br><br>
+
+        <p>All documentation on this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN</a>. </p><br>
+      </main>
+    </div>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    
+  </body>
+
+</html>
